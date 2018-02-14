@@ -26,7 +26,10 @@ public class BallBehavior : MonoBehaviour {
 	// Update is called once per frame
 	// --------------------------------------
 	void Update () {
-		
+		// Destroy an instance if it goes under 0
+		if (transform.position.y < -500f) {
+			Destroy (gameObject);
+		}
 	}
 
 	// --------------------------------------
@@ -61,11 +64,6 @@ public class BallBehavior : MonoBehaviour {
                
                 // Debug.Log ("This object has the same material as me");
 			}
-		}
-
-		// Destroy an instance if it goes under 0
-		if (transform.position.y < -70f) {
-			Destroy (gameObject);
 		}
 	}
 
