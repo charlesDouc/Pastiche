@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/FirstPrototype/WithoutPlatforms.unity
+- path: Assets/Scenes/SecondPrototype.unity
   isLoaded: 1
   isActive: 1
