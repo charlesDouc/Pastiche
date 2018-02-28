@@ -5,9 +5,11 @@ using UnityEngine;
 public class GameMaster : MonoBehaviour {
 
 	// public variables
+	public GameObject m_cannon;
+
 
 	// private variables
-	// ConsoleController console = new ConsoleController();
+
 
 	// ------------------------------------
 	// Use this for initialization
@@ -26,7 +28,9 @@ public class GameMaster : MonoBehaviour {
 	// ------------------------------------
 	// Methods
 	// ------------------------------------
-	public void hello () {
-		Debug.Log ("lol it works");
+	public void canonAngle (int index) {
+		cannonController cannonScript = m_cannon.GetComponent<cannonController>();
+		cannonScript.changeAngle (index); 
+		
 	}
 }
