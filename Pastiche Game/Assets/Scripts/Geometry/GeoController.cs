@@ -38,8 +38,6 @@ public class GeoController : MonoBehaviour {
 			// Return the value depending on a time lapse
 			yield return new WaitForSeconds (m_refreshRotate);
 		}
-
-
 	}
 
 }
