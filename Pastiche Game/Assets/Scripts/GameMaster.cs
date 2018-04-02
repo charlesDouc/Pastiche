@@ -5,7 +5,6 @@ using UnityEngine;
 public class GameMaster : MonoBehaviour {
 
 	// public variables
-	public GameObject m_cannon;
 
 	// private variables
 
@@ -14,7 +13,6 @@ public class GameMaster : MonoBehaviour {
 	// Use this for initialization
 	// ------------------------------------
 	void Start () {
-		//console.runCommandString ("hello");
 	}
 
 	// ------------------------------------
@@ -27,9 +25,8 @@ public class GameMaster : MonoBehaviour {
 	// ------------------------------------
 	// Methods
 	// ------------------------------------
-	public void canonAngle (int index) {
-		cannonController cannonScript = m_cannon.GetComponent<cannonController>();
-		cannonScript.changeAngle (index); 
-		
+	public void  playerDirection (int directionIndex) {
+		// directionIndex : 1 = top, 2 = right, 3 = bottom, 4 = left
+		Debug.Log("hello");
 	}
 }

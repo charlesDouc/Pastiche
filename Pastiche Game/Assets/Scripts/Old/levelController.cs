@@ -14,7 +14,7 @@ public class levelController : MonoBehaviour {
 
 	// private variables
 	private Vector3 m_currentPos;			// Use to capture the data of the object's position
-	private bool m_isMoving = false;			// Make the object moves
+	private bool m_isMoving = false;		// Make the object moves
 	private int m_selectedColumns = 0;		// The colomn index
 	private int m_linesCompleted = 0;		// Completed lines
 
@@ -52,13 +52,14 @@ public class levelController : MonoBehaviour {
 		// The zoom effect when a new level is spawn
 		if (m_currentPos.z > 450) {
 			m_currentPos.z -= m_speed * 2; 
-		}
+		} 
+
 		// Load the next level
 		if (m_linesCompleted == m_numberOfLines) {
 			m_isMoving = true;
 			StartCoroutine(nextLevel());
 		}
-		// Start the zoom effect toward the camera
+		// Start the zoom effect toward the camerbraa
 		if (m_isMoving) {
 			m_currentPos.z -= m_speed;
 		}

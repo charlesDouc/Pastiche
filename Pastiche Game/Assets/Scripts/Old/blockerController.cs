@@ -13,7 +13,7 @@ public class blockerController : MonoBehaviour {
 	// private variables
 	private int m_numberOfCubes;			// Number of cubes stacking under the blocker
 	private Vector3 m_currentPos;			// Use to capture the data of the object's position
-	private bool m_isMoving = true;			// Make the object moves
+	private bool m_isMoving = false;		// Make the object moves
 	private MeshRenderer m_renderer;		// A variable linked to the mesh renderer
 
 
@@ -69,8 +69,10 @@ public class blockerController : MonoBehaviour {
 		while (true) {
 			// Return the value depending on a time lapse
 			yield return new WaitForSeconds (m_refreshMovement);
-			// Update the position of the object
-			transform.position = m_currentPos;
+			// Update the position of the object if it's moving
+			if (m_isMoving) {
+				transform.position = m_currentPos;
+			}
 		}
 	}
 

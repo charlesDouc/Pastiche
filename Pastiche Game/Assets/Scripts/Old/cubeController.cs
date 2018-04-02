@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,11 +8,11 @@ public class cubeController : MonoBehaviour {
 	public bool m_goingDown = false;		// Check the direction of the object
 	public float m_speedDirection = 3f;		// Speed value of the object on the line
 	public float m_refreshMovement = 0.1f;  // Value of the update refresher
-	public GameObject m_levelManager;			// Get the level manager
+	public GameObject m_levelManager;		// Get the level manager
 
 	// private variables
 	private Vector3 m_currentPos;			// Use to capture the data of the object's position
-	private bool m_isMoving = true;			// Make the object moves
+	private bool m_isMoving = false;		// Make the object moves
 
 	// ------------------------------------
 	// Use this for initialization
@@ -21,7 +21,7 @@ public class cubeController : MonoBehaviour {
 
 		// Start Coroutine for the movement
 		StartCoroutine(move());
-		// 
+
 	}
 
 	// ------------------------------------
@@ -53,8 +53,10 @@ public class cubeController : MonoBehaviour {
 		while (true) {
 			// Return the value depending on a time lapse
 			yield return new WaitForSeconds (m_refreshMovement);
-			// Update the position of the object
-			transform.position = m_currentPos;
+			// Update the position of the object if it's moving
+			if (m_isMoving) {
+				transform.position = m_currentPos;
+			}
 		}
 	}
 
@@ -74,6 +76,11 @@ public class cubeController : MonoBehaviour {
 			levelController levelScript = m_levelManager.GetComponent<levelController>();
 			levelScript.lineCompleted();
 		}
+	}
+
+	public void readyToMove () {
+		// Make the object readyToMove
+		m_isMoving = true;
 	}
 		
 }

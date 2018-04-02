@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/SecondPrototype.unity
+- path: Assets/Scenes/Depth.unity
   isLoaded: 1
   isActive: 1
