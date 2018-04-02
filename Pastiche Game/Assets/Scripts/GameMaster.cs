@@ -7,7 +7,6 @@ public class GameMaster : MonoBehaviour {
 	// public variables
 	public GameObject m_cannon;
 
-
 	// private variables
 
 

@@ -68,6 +68,8 @@ public class ConsoleController {
 		//When adding commands, you must add a call below to registerCommand() with its name, implementation method, and help text.
 		registerCommand("help", help, "Print this help.");
 		registerCommand(repeatCmdName, repeatCommand, "Repeat last command.");
+		registerCommand("getcolone", getColOne, "Set the canon on colomn number 1");
+		registerCommand("getcoltwo", getColTwo, "Set the canon on colomn number 2");
 		registerCommand("r.1", rOne, "Set the canon on the row number 1");
 		registerCommand("r.2", rTwo, "Set the canon on the row number 2");
 		registerCommand("r.3", rThree, "Set the canon on the row number 3");
@@ -77,7 +79,7 @@ public class ConsoleController {
 		registerCommand("r.7", rSeven, "Set the canon on the row number 7");
 		registerCommand("r.8", rEight, "Set the canon on the row number 8");
 		registerCommand("r.9", rNine, "Set the canon on the row number 9");
-		registerCommand("fire", rNine, "Fire the cannon on the selected row");
+		registerCommand("fire", fire, "Fire the cannon on the selected row");
 	}
 
 	void registerCommand(string command, CommandHandler handler, string help) {
@@ -214,7 +216,7 @@ public class ConsoleController {
 		GameObject m_cannon = GameObject.FindGameObjectWithTag("Cannon");
 		cannonController cannonScript = m_cannon.GetComponent<cannonController>();
 		cannonScript.changeAngle(1);
-		appendLogLine ("New cannon position : Set to row number 1");
+		appendLogLine ("New cannon position : Set to column number 1");
 	}
 
 	void rTwo (string[] args) {
@@ -222,7 +224,7 @@ public class ConsoleController {
 		GameObject m_cannon = GameObject.FindGameObjectWithTag("Cannon");
 		cannonController cannonScript = m_cannon.GetComponent<cannonController>();
 		cannonScript.changeAngle(2);
-		appendLogLine ("New cannon position : Set to row number 2");
+		appendLogLine ("New cannon position : Set to column number 2");
 	}
 
 	void rThree (string[] args) {
@@ -279,6 +281,25 @@ public class ConsoleController {
 		cannonController cannonScript = m_cannon.GetComponent<cannonController>();
 		cannonScript.changeAngle(9);
 		appendLogLine ("New cannon position : Set to row number 9");
+	}
+
+
+
+
+	void getColOne (string[] args) {
+		// Set the cannon to row 1
+		GameObject m_cannon = GameObject.FindGameObjectWithTag("Cannon");
+		cannonController cannonScript = m_cannon.GetComponent<cannonController>();
+		cannonScript.changeAngle(1);
+		appendLogLine ("New cannon position : Set to column number 1");
+	}
+
+	void getColTwo (string[] args) {
+		// Set the cannon to row 2
+		GameObject m_cannon = GameObject.FindGameObjectWithTag("Cannon");
+		cannonController cannonScript = m_cannon.GetComponent<cannonController>();
+		cannonScript.changeAngle(2);
+		appendLogLine ("New cannon position : Set to column number 2");
 	}
 		
 

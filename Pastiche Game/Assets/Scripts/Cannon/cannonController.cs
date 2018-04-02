@@ -5,18 +5,17 @@ using UnityEngine;
 public class cannonController : MonoBehaviour {
 
 	// public variables
-	public GameObject[] m_rows;
-
-
-	// private variables
-	private int m_currentRow;
+	public int m_rows;
+	public int m_columns;
+	public bool m_fired = false;
 
 	// ------------------------------------
 	// Use this for initialization
 	// ------------------------------------
 	void Start () {
 		// Set the current angle of the canon to 0
-		m_currentRow = 0; 
+		m_rows = 0; 
+		m_columns = 0;
 	}
 
 	// ------------------------------------
@@ -31,11 +30,13 @@ public class cannonController : MonoBehaviour {
 	// ------------------------------------
 	public void changeAngle (int newRow) {
 		// Change the angle of the canon to a new value
-		m_currentRow = newRow;
+		m_columns = newRow;
 	}
 
 	public void shoot () {
-		
+		if (m_rows != 0 || m_columns != 0) {
+			m_fired = true;
+		}
 	}
 
 }
