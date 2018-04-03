@@ -70,6 +70,8 @@ public class ConsoleController {
 		registerCommand(repeatCmdName, repeatCommand, "Repeat last command.");
 		registerCommand("goright", goRight, "Move to the right.");
 		registerCommand("goleft", goLeft, "Move to the left.");
+		registerCommand("goup", goUp, "Move up.");
+		registerCommand("godown", goDown, "Move down.");
 	}
 
 	void registerCommand(string command, CommandHandler handler, string help) {
@@ -195,7 +197,41 @@ public class ConsoleController {
 		}
 
 		// Write in the console
-		appendLogLine ("Start Movement **Left**.");
+		appendLogLine ("Start Movement Left.");
+	}
+
+	// Move up  ------------------------------------------------------------
+	void goUp (string[] args) {
+		// Get all the players object active in the scene
+		GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
+		// Activate the movement for each player instance
+		if (players != null) {
+			for (int i = 0; i < players.Length; i++) {
+				playerController playersScript = players[i].GetComponent<playerController>();
+				playersScript.goUp();
+			}
+		}
+
+		// Write in the console
+		appendLogLine ("Start Movement Up.");
+	}
+
+	// Move down ----------------------------------------------------------
+	void goDown (string[] args) {
+		// Get all the players object active in the scene
+		GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
+		// Activate the movement for each player instance
+		if (players != null) {
+			for (int i = 0; i < players.Length; i++) {
+				playerController playersScript = players[i].GetComponent<playerController>();
+				playersScript.goDown();
+			}
+		}
+
+		// Write in the console
+		appendLogLine ("Start Movement Down.");
 	}
 
 

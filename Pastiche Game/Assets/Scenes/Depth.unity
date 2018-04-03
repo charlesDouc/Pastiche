@@ -29119,6 +29119,80 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1142413874}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1144014410
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1765773778}
+    m_Modifications:
+    - target: {fileID: 400000, guid: d4f738b562174c14eaf54de291a4c5ba, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d4f738b562174c14eaf54de291a4c5ba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d4f738b562174c14eaf54de291a4c5ba, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d4f738b562174c14eaf54de291a4c5ba, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d4f738b562174c14eaf54de291a4c5ba, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d4f738b562174c14eaf54de291a4c5ba, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d4f738b562174c14eaf54de291a4c5ba, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d4f738b562174c14eaf54de291a4c5ba, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d4f738b562174c14eaf54de291a4c5ba, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 20.29768
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d4f738b562174c14eaf54de291a4c5ba, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 20.29768
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d4f738b562174c14eaf54de291a4c5ba, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 20.297676
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d4f738b562174c14eaf54de291a4c5ba, type: 3}
+  m_IsPrefabParent: 0
+--- !u!4 &1144014411 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: d4f738b562174c14eaf54de291a4c5ba, type: 3}
+  m_PrefabInternal: {fileID: 1144014410}
+--- !u!1 &1144014412 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: d4f738b562174c14eaf54de291a4c5ba, type: 3}
+  m_PrefabInternal: {fileID: 1144014410}
+--- !u!65 &1144014413
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1144014412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2.0000005, z: 2.0000005}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1145376413
 GameObject:
   m_ObjectHideFlags: 0
@@ -31924,6 +31998,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1238518136}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1238975996 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1904238863527808, guid: a72e01f78520b95499c2e238d50957ee,
+    type: 2}
+  m_PrefabInternal: {fileID: 1970177803}
+--- !u!135 &1238975997
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1238975996}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.0000002
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1239336536
 GameObject:
   m_ObjectHideFlags: 0
@@ -43947,6 +44038,7 @@ Transform:
   - {fileID: 655287812}
   - {fileID: 643398429}
   - {fileID: 629363245}
+  - {fileID: 1144014411}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
