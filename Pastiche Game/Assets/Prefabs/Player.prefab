@@ -22,10 +22,12 @@ GameObject:
   - component: {fileID: 33261871836502204}
   - component: {fileID: 23297228448311294}
   - component: {fileID: 95043305169582492}
+  - component: {fileID: 54002470680742176}
   - component: {fileID: 114694815827089210}
+  - component: {fileID: 65772187434357506}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,6 +87,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1904238863527808}
   m_Mesh: {fileID: 4300000, guid: 7177527993747064d99519c1c568ba26, type: 3}
+--- !u!54 &54002470680742176
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1904238863527808}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
+--- !u!65 &65772187434357506
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1904238863527808}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95043305169582492
 Animator:
   serializedVersion: 3
@@ -114,3 +143,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d607696f3adb7a4d97e33fd48b6ae94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_movementSpeed: 25
+  m_levelManager: {fileID: 0}

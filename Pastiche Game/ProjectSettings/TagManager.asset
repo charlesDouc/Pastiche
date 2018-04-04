@@ -8,7 +8,7 @@ TagManager:
   - Ball
   - Cannon
   - Blocker
-  - Cube
+  - Arrival
   layers:
   - Default
   - TransparentFX
