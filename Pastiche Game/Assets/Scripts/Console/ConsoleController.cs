@@ -72,6 +72,8 @@ public class ConsoleController {
 		registerCommand("goleft", goLeft, "Move to the left.");
 		registerCommand("goup", goUp, "Move up.");
 		registerCommand("godown", goDown, "Move down.");
+		registerCommand("reset", resetStage, "Reset the current stage.");
+
 	}
 
 	void registerCommand(string command, CommandHandler handler, string help) {
@@ -232,6 +234,23 @@ public class ConsoleController {
 
 		// Write in the console
 		appendLogLine ("Start Movement Down.");
+	}
+
+	// Reset stage ----------------------------------------------------------
+	void resetStage (string[] args) {
+		// Get all the players object active in the scene
+		GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
+		// Activate the movement for each player instance
+		if (players != null) {
+			for (int i = 0; i < players.Length; i++) {
+				playerController playersScript = players[i].GetComponent<playerController>();
+				playersScript.reset();
+			}
+		}
+
+		// Write in the console
+		appendLogLine ("Reset stage. Reinitializing current state.");
 	}
 
 

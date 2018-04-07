@@ -18,8 +18,17 @@ public class playerController : MonoBehaviour {
 	private bool m_canGoRight = true;		// Allow the player to go right
 	private bool m_canGoUp = true;			// Allow the player to go up
 	private bool m_canGoDown = true;		// Allow the player to go down
-	private Vector3 m_currentPos;
+	private Vector3 m_currentPos;			// Current transform.position of the object
+	private Vector3 m_initialPos; 			// Initial position of the object
 
+
+	// ------------------------------------
+	// Use this for initialization
+	// ------------------------------------
+	void Start () {
+		// Get the initial position of the object before the game start
+		m_initialPos = gameObject.transform.position;
+	}
 
 	// ------------------------------------
 	// Update is called once per frame
@@ -155,6 +164,11 @@ public class playerController : MonoBehaviour {
 			m_goDown = true;
 			m_move = true;
 		}
+	}
+
+	public void reset() {
+		// Reset the puzzle/level (by resetting players' initial position)
+		gameObject.transform.position = m_initialPos;
 	}
 
 }
