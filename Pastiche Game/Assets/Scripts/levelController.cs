@@ -45,4 +45,17 @@ public class levelController : MonoBehaviour {
 		}
 	}
 
+	public void resetLevel () {
+		// Get all the players object active in the scene
+		GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
+		// Activate the movement for each player instance
+		if (players != null) {
+			for (int i = 0; i < players.Length; i++) {
+				playerController playersScript = players[i].GetComponent<playerController>();
+				playersScript.reset();
+			}
+		}
+	}
+
 }

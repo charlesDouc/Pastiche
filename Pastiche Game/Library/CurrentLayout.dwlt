@@ -110,7 +110,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 121
+  controlID: 23
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 28
+  controlID: 97
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -155,14 +155,14 @@ MonoBehaviour:
     height: 698
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 11}
+  m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
   - {fileID: 11}
   - {fileID: 13}
   - {fileID: 14}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -268,14 +268,14 @@ MonoBehaviour:
     height: 677
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 1650.3476759531904
+  lastFramingTime: 2018.7445848417651
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 182.32272, y: 419.22064, z: 421.22617}
+    m_Target: {x: -58.867683, y: 331.70782, z: -319.41724}
     speed: 2
-    m_Value: {x: 182.32272, y: 419.22064, z: 421.22617}
+    m_Value: {x: -58.867683, y: 331.70782, z: -319.41724}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -303,13 +303,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.004488569, y: -0.07252516, z: -0.0002527866, w: 0.99735653}
+    m_Target: {x: 0.05381945, y: 0.07812853, z: -0.004150169, w: 0.9954809}
     speed: 2
-    m_Value: {x: -0.004488569, y: -0.07252516, z: -0.0002527866, w: 0.99735653}
+    m_Value: {x: 0.05381945, y: 0.07812853, z: -0.004150169, w: 0.9954809}
   m_Size:
-    m_Target: 234.14333
+    m_Target: 464.61884
     speed: 2
-    m_Value: 234.14333
+    m_Value: 464.61884
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -366,7 +366,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoom: 0
     m_UniformScale: 1
     m_UpDirection: 1
@@ -500,20 +500,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Prefabs/Tutorial
   m_ViewMode: 1
   m_StartGridSize: 65
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Prefabs/Tutorial
   m_LastFoldersGridSize: 65
   m_LastProjectPath: C:\Users\Charles\Documents\GitHub\Pastiche\Pastiche Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 48320000
-    m_LastClickedID: 12872
-    m_ExpandedIDs: 0000000004310000a2310000ffffff7f
+    m_SelectedIDs: 22250200
+    m_LastClickedID: 140578
+    m_ExpandedIDs: 00000000ba090000820a0000380b0000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -541,7 +541,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000004310000a2310000
+    m_ExpandedIDs: 00000000ba090000820a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -649,7 +649,7 @@ MonoBehaviour:
   m_AnimEditor: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -24546
+  m_LastSelectedObjectID: -24924
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -677,9 +677,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: fa450000
-    m_LastClickedID: 17914
-    m_ExpandedIDs: 7075feff5efefeff1aa0ffff24ebffff00000000ac3b0000bc3d0000
+    m_SelectedIDs: 187cfdff
+    m_LastClickedID: -164840
+    m_ExpandedIDs: 989effffb49effffeef9ffff00000000d40e00007e1600002c1d0000fc240000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

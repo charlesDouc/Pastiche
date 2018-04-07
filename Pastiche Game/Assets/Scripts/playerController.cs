@@ -117,6 +117,13 @@ public class playerController : MonoBehaviour {
 			m_currentPos = col.transform.position;
 			transform.position = m_currentPos;
 		}
+
+		// If it collides with anpther player
+		if (col.tag == "Player") {
+			// Reset the level
+			levelController lvlManage = m_levelManager.GetComponent<levelController>();
+			lvlManage.resetLevel ();
+		}
 	} 
 
 
