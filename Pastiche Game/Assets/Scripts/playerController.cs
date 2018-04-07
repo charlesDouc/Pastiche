@@ -18,42 +18,43 @@ public class playerController : MonoBehaviour {
 	private bool m_canGoRight = true;		// Allow the player to go right
 	private bool m_canGoUp = true;			// Allow the player to go up
 	private bool m_canGoDown = true;		// Allow the player to go down
+	private Vector3 m_currentPos;
 
 
 	// ------------------------------------
 	// Update is called once per frame
 	// ------------------------------------
 	void FixedUpdate () {
-		Vector3 currentPos = transform.position;
+		m_currentPos = transform.position;
 
 		// Check if the object is in movement
 		if (m_move) {
 			// Check if the object is going right
 			if (m_goRight) {
-				currentPos.x += m_movementSpeed;
+				m_currentPos.x += m_movementSpeed;
 				// Update the position of the object
-				transform.position = currentPos;
+				transform.position = m_currentPos;
 			}
 
 			// Check if the object is going left
 			if (m_goLeft) {
-				currentPos.x -= m_movementSpeed;
+				m_currentPos.x -= m_movementSpeed;
 				// Update the position of the object
-				transform.position = currentPos;
+				transform.position = m_currentPos;
 			}
 
 			// Check if the object is going Up
 			if (m_goUp) {
-				currentPos.y += m_movementSpeed;
+				m_currentPos.y += m_movementSpeed;
 				// Update the position of the object
-				transform.position = currentPos;
+				transform.position = m_currentPos;
 			}
 
 			// Check if the object is going down
 			if (m_goDown) {
-				currentPos.y -= m_movementSpeed;
+				m_currentPos.y -= m_movementSpeed;
 				// Update the position of the object
-				transform.position = currentPos;
+				transform.position = m_currentPos;
 			}
 		}		
 	}
@@ -77,6 +78,10 @@ public class playerController : MonoBehaviour {
 			m_canGoLeft = blockerScript.m_allowLeft;
 			m_canGoUp = blockerScript.m_allowUp;
 			m_canGoDown = blockerScript.m_allowDown;
+
+			// Update the position in the center of the collision object
+			m_currentPos = col.transform.position;
+			transform.position = m_currentPos;
 		}
 
 		// When the object collides with the Arrival
@@ -94,8 +99,26 @@ public class playerController : MonoBehaviour {
 			m_canGoLeft = arrivalScript.m_allowLeft;
 			m_canGoUp = arrivalScript.m_allowUp;
 			m_canGoDown = arrivalScript.m_allowDown;
+
+			// Tell the level controller that an arrival was activated
+			levelController lvlManage = m_levelManager.GetComponent<levelController>();
+			lvlManage.newEntry (true);
+
+			// Update the position in the center of the collision object
+			m_currentPos = col.transform.position;
+			transform.position = m_currentPos;
 		}
 	} 
+
+
+	void OnTriggerExit (Collider col) {
+		// When the object exit collider with the Arrival
+		if (col.tag == "Arrival") {
+			// Tell the level controller that an arrival was deactivated
+			levelController lvlManage = m_levelManager.GetComponent<levelController>();
+			lvlManage.newEntry (false);
+		}
+	}
 
 
 	public void goRight () {
