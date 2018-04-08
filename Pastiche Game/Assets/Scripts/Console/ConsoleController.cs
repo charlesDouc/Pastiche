@@ -151,11 +151,12 @@ public class ConsoleController {
 	// AUTOMATIC MESSAGES
 	// ----------------------------------------------------------------------
 	public void bootUp () {
-		appendLogLine ("Welcome to bubble puzzle (temporary name).");
-		appendLogLine ("A game by Deep Dream Co. and distributed for Saturn Enterprise.");
+		appendLogLine ("Hello administrator.");
+		appendLogLine ("This software is handle by [instert] and supoort by [insert].");
+		appendLogLine ("This system is handle by [instert] and supoort by [insert].");
 		appendLogLine (" ");
 		appendLogLine ("This game plays with command lines.");
-		appendLogLine ("Enter help to see a list of all actions you can do.");
+		appendLogLine ("Enter 'help' to see a list of all actions you can do.");
 
 	}
 

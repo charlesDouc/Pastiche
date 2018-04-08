@@ -7,6 +7,7 @@ public class playerController : MonoBehaviour {
 	// public variables
 	public float m_movementSpeed = 25f;		// Movement speed of the object
 	public GameObject m_levelManager;		// The level manager in which the object lives
+	public bool m_isInverse = false;		// Determine if the player is inverse form commands
 
 	// private variables
 	private bool m_move = false;			// Check if object is in movement
@@ -83,6 +84,7 @@ public class playerController : MonoBehaviour {
 
 			// Get the directions value from the blocker
 			blockerController blockerScript = col.gameObject.GetComponent<blockerController>();
+
 			m_canGoRight = blockerScript.m_allowRight;
 			m_canGoLeft = blockerScript.m_allowLeft;
 			m_canGoUp = blockerScript.m_allowUp;
@@ -139,36 +141,56 @@ public class playerController : MonoBehaviour {
 
 	public void goRight () {
 		// Make sure the object is not in movement
-		if (!m_move && m_canGoRight) {
+		if (!m_move && m_canGoRight && !m_isInverse) {
 			// Start right Movement
 			m_goRight = true;
 			m_move = true;
-		}
-	}
-
-	public void goLeft () {
-		// Make sure the object is not in movement
-		if (!m_move && m_canGoLeft) {
+		// Inverse the movement if the player is invere
+		} else if (!m_move && m_canGoLeft && m_isInverse) {
 			// Start left Movement
 			m_goLeft = true;
 			m_move = true;
 		}
 	}
 
+	public void goLeft () {
+		// Make sure the object is not in movement
+		if (!m_move && m_canGoLeft && !m_isInverse) {
+			// Start left Movement
+			m_goLeft = true;
+			m_move = true;
+		// Inverse the movement if the player is invere
+		} else if (!m_move && m_canGoRight && m_isInverse) {
+			// Start right Movement
+			m_goRight = true;
+			m_move = true;
+		}
+	}
+
 	public void goUp () {
 		// Make sure the object is not in movement
-		if (!m_move && m_canGoUp) {
+		if (!m_move && m_canGoUp && !m_isInverse) {
 			// Start up Movement
 			m_goUp = true;
+			m_move = true;
+		// Inverse the movement if the player is invere
+		} else if (!m_move && m_canGoDown && m_isInverse) {
+			// Start down Movement
+			m_goDown = true;
 			m_move = true;
 		}
 	}
 
 	public void goDown () {
 		// Make sure the object is not in movement
-		if (!m_move && m_canGoDown) {
-			// Start up Movement
+		if (!m_move && m_canGoDown && !m_isInverse) {
+			// Start down Movement
 			m_goDown = true;
+			m_move = true;
+		// Inverse the movement if the player is invere
+		} else if (!m_move && m_canGoUp && m_isInverse) {
+			// Start up Movement
+			m_goUp = true;
 			m_move = true;
 		}
 	}

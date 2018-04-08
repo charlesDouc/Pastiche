@@ -145,3 +145,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_movementSpeed: 25
   m_levelManager: {fileID: 0}
+  m_isInverse: 0

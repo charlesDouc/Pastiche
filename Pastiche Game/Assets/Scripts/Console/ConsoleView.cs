@@ -39,8 +39,6 @@ public class ConsoleView : MonoBehaviour {
 			console.logChanged += onLogChanged;
 		}
 		updateLogStr(console.log);
-
-		console.bootUp ();
 	}
 
 	~ConsoleView() {
@@ -102,5 +100,14 @@ public class ConsoleView : MonoBehaviour {
 		console.runCommandString(inputField.text);
 		inputField.text = "";
 	}
+
+
+	// MAIN FUNCTIONS FOR TEXT DISPALY ---------------
+	public void bootUp () {
+		// Show the boot up message on the console
+		console.bootUp ();
+	}
+
+
 
 }

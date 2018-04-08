@@ -9,10 +9,12 @@ public class GameMaster : MonoBehaviour {
 	// private variables
 
 
+
 	// ------------------------------------
 	// Use this for initialization
 	// ------------------------------------
 	void Start () {
+
 	}
 
 	// ------------------------------------
@@ -25,8 +27,4 @@ public class GameMaster : MonoBehaviour {
 	// ------------------------------------
 	// Methods
 	// ------------------------------------
-	public void  playerDirection (int directionIndex) {
-		// directionIndex : 1 = top, 2 = right, 3 = bottom, 4 = left
-		Debug.Log("hello");
-	}
 }

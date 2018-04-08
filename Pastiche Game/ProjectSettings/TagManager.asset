@@ -9,6 +9,7 @@ TagManager:
   - Cannon
   - Blocker
   - Arrival
+  - Console
   layers:
   - Default
   - TransparentFX
