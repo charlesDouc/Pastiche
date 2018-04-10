@@ -19,8 +19,13 @@ public class prologueController : MonoBehaviour {
 	[Header ("Logo")]
 	public GameObject m_specterLogo;		// Logo image
 	public GameObject m_welcomeTitle;		// Welcome title under the logo
-
-
+	[Header ("Sounds")]
+	public AudioClip m_bootUpSound;			// Boot up sound to play
+	public AudioClip m_bip;					// Bip sound playing
+	public AudioClip m_specterIntroSound;	// Intro sound over the logo screen
+	[Space(10)]
+	public AudioSource m_audioOne;			// First audio source
+	public AudioSource m_audioTwo;			// Second audio source
 	// private variables
 
 	// ------------------------------------
@@ -29,7 +34,7 @@ public class prologueController : MonoBehaviour {
 	void Start () {
 		// Start the boot Sequence
 		StartCoroutine("BootUpSequence");
-	
+
 	}
 		
 	// ------------------------------------
@@ -37,14 +42,18 @@ public class prologueController : MonoBehaviour {
 	// ------------------------------------
 	IEnumerator BootUpSequence () {
 		// The blinking animation of the loading screen
-		for (int i = 0; i < m_numberOfBlinkSequence + 1; i++) {
+		for (int i = 0; i < m_numberOfBlinkSequence; i++) {
 			m_LoadingScreen.gameObject.SetActive(true);
 			yield return new WaitForSeconds(0.5f);
 			m_LoadingScreen.gameObject.SetActive(false);
 			yield return new WaitForSeconds(0.5f);
 		}
 
-		// Display blocs one after the other
+		// Display blocs one after the other ----
+		// Start boot up sound
+		m_audioOne.clip = m_bootUpSound;
+		m_audioOne.Play();
+		yield return new WaitForSeconds(1.5f);
 		m_textBlockOne.gameObject.SetActive(true);
 		yield return new WaitForSeconds(1);
 		m_textBlockTwo.gameObject.SetActive(true);
@@ -54,7 +63,10 @@ public class prologueController : MonoBehaviour {
 		m_textBlockFour.gameObject.SetActive(true);
 		yield return new WaitForSeconds(0.1f);
 		m_textBlockFive.gameObject.SetActive(true);
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(3f);
+		// Play a bip sound
+		m_audioTwo.clip = m_bip;
+		m_audioTwo.Play();
 		m_textBlockSix.gameObject.SetActive(true);
 		yield return new WaitForSeconds(0.2f);
 		m_textBlockSeven.gameObject.SetActive(true);
@@ -71,10 +83,14 @@ public class prologueController : MonoBehaviour {
 
 		// Specter Logo
 		yield return new WaitForSeconds(2f);
+		m_audioTwo.clip = m_specterIntroSound;
+		m_audioTwo.Play();
 		m_specterLogo.gameObject.SetActive(true);
+		yield return new WaitForSeconds(0.2f);
 		m_welcomeTitle.gameObject.SetActive(true);
 
 		// Load next scene
+		yield return new WaitForSeconds(4f);
 		SceneManager.LoadScene(1);
 
 	} 
