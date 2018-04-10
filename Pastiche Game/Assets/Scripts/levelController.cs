@@ -8,16 +8,26 @@ public class levelController : MonoBehaviour {
 	public GameObject m_nextLevel;			// Variable to hold next level game object
 	public int m_totalOfArrivals;			// Total of arrivals in this level
 	public bool m_haveNextLevel = true;		// True if there's a next level (put to false while building)
+	[Header("End direction Speed")]
+	public float m_ySpeed = 10f;			// End animation y spedd direction
+	public float m_zSpeed = 3f;				// End animation y spedd direction
+	public float m_timeLapse = 3f;			// Time before activating next stage;	
 
 	// private variables
 	private int m_activatedArrivals = 0;	// Total of activated arrivals in this level
-
+	private GameObject m_theGameMaster;		// Instance of the Game Master
+	private GameMaster m_GMcontroller;		// Script attach to the game master
+	private bool levelFinished = false;		// Indicate the state of the stage
+	private Vector3 m_currentPos; 			// Current pos of the object
+	private bool m_startEndAnim = false;	// Check for the end animation 
 
 	// ------------------------------------
 	// Use this for initialization
 	// ------------------------------------
 	void Start () {
-		
+		// Initiate the Game Master
+		m_theGameMaster = GameObject.FindWithTag("GameController");
+		m_GMcontroller = m_theGameMaster.GetComponent<GameMaster>();
 	}
 	
 	// ------------------------------------
@@ -25,11 +35,19 @@ public class levelController : MonoBehaviour {
 	// ------------------------------------
 	void Update () {
 		// When the number of activated arrivals equal the total of arrivals in the level
-		if (m_activatedArrivals == m_totalOfArrivals && m_haveNextLevel) {
+		if (m_activatedArrivals == m_totalOfArrivals && m_haveNextLevel	&& !levelFinished) {
 			// Activate next level and desactivate the current one
-			m_nextLevel.SetActive(true);
-			gameObject.SetActive(false);
+			StartCoroutine("startTransition");
+			levelFinished = true;
 		}	
+
+		// Movement animation at the end of a level
+		if (levelFinished && m_startEndAnim) {
+			m_currentPos = transform.position;
+			m_currentPos.z -= m_ySpeed;
+			m_currentPos.y -= m_zSpeed;
+			transform.position = m_currentPos;
+		}
 	}
 	
 	// ------------------------------------
@@ -56,6 +74,18 @@ public class levelController : MonoBehaviour {
 				playersScript.reset();
 			}
 		}
+	}
+
+	IEnumerator startTransition () {
+		m_GMcontroller.startTransition();
+		yield return new WaitForSeconds(2f);
+		m_startEndAnim = true;
+		yield return new WaitForSeconds(m_timeLapse);
+		// Turn off this level and activate next level
+		m_nextLevel.SetActive(true);
+		// Tell the GM the transition is over
+		m_GMcontroller.endTransition();
+		gameObject.SetActive(false);
 	}
 
 }

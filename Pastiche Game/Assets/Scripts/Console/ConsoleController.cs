@@ -191,12 +191,26 @@ public class ConsoleController {
 		appendLogLine ("Stand by.");
 	}
 
-		public void bootUpMessageSeven () {
+	public void bootUpMessageSeven () {
 		appendLogLine (" ");
 		appendLogLine ("Activating command input.");
 		appendLogLine ("Press help to display all commands available.");
 		appendLogLine ("Initial sequence started.");
 		appendLogLine ("System's all yours user_84204942.");
+	}
+
+	public void stageComplete () {
+		appendLogLine (" ");
+		appendLogLine ("Break through successful.");
+		appendLogLine ("Initialize next crypting data.");
+		appendLogLine ("Stand by.");
+	}
+
+	public void stageReady () {
+		appendLogLine (" ");
+		appendLogLine ("New problem ahead.");
+		appendLogLine ("Command enable.");
+		appendLogLine ("Ready to solve.");
 	}
 
 

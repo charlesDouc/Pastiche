@@ -70,6 +70,21 @@ public class GameMaster : MonoBehaviour {
 		inputFieldController inputScript = m_inputCommands.GetComponent<inputFieldController>();
 		inputScript.changeStatus(true);
 		m_consoleScript.initialSequence(7);
+	}
 
+	public void startTransition () {
+		// Disable input command
+		inputFieldController inputScript = m_inputCommands.GetComponent<inputFieldController>();
+		inputScript.changeStatus(false);
+		// Show a message in the console
+		m_consoleScript.successSequence(1);
+	}
+
+	public void endTransition () {
+		// Enable input command
+		inputFieldController inputScript = m_inputCommands.GetComponent<inputFieldController>();
+		inputScript.changeStatus(true);
+		// Show a message in the console
+		m_consoleScript.successSequence(2);
 	}
 }

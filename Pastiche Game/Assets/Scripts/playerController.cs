@@ -8,6 +8,9 @@ public class playerController : MonoBehaviour {
 	public float m_movementSpeed = 25f;		// Movement speed of the object
 	public GameObject m_levelManager;		// The level manager in which the object lives
 	public bool m_isInverse = false;		// Determine if the player is inverse form commands
+	[Header("MaterialsSetiing")]
+	public Material m_normalMat;			// Defaut material (not in arriva)
+	public Material m_activeMat;			// Arrival active material
 
 	// private variables
 	private bool m_move = false;			// Check if object is in movement
@@ -29,6 +32,9 @@ public class playerController : MonoBehaviour {
 	void Start () {
 		// Get the initial position of the object before the game start
 		m_initialPos = gameObject.transform.position;
+
+		// Set defaut Material
+		GetComponent<Renderer>().material = m_normalMat;
 	}
 
 	// ------------------------------------
@@ -120,6 +126,9 @@ public class playerController : MonoBehaviour {
 			// Update the position in the center of the collision object
 			m_currentPos = col.transform.position;
 			transform.position = m_currentPos;
+
+			// Change the active material
+			GetComponent<Renderer>().material = m_activeMat;
 		}
 
 		// If it collides with anpther player
@@ -140,6 +149,9 @@ public class playerController : MonoBehaviour {
 			// Change the state of the arrival
 			arrivalController arrivalScript = col.gameObject.GetComponent<arrivalController>();
 			arrivalScript.activate(false);
+
+			// Reset the material to defaut
+			GetComponent<Renderer>().material = m_normalMat;
 		}
 	}
 

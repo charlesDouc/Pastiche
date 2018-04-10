@@ -146,3 +146,5 @@ MonoBehaviour:
   m_movementSpeed: 25
   m_levelManager: {fileID: 0}
   m_isInverse: 0
+  m_normalMat: {fileID: 2100000, guid: 329d5532bf24600438e9926d40ff9844, type: 2}
+  m_activeMat: {fileID: 2100000, guid: 67e7fda7b202540ffac9e43036b64706, type: 2}

@@ -128,6 +128,18 @@ public class ConsoleView : MonoBehaviour {
 		}
 	}
 
+	public void successSequence (int messageIndex) {
+		// Show a message in the console view
+		if (messageIndex == 1) {
+			console.stageComplete ();
+		}
+		if (messageIndex == 2) {
+			console.stageReady ();
+		}
+
+
+	}
+
 
 
 }

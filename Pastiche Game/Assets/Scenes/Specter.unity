@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.24870768, g: 0.5507641, b: 0.5157578, a: 1}
+  m_IndirectSpecularColor: {r: 0.24868983, g: 0.55075574, b: 0.51573837, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -658,6 +658,9 @@ MonoBehaviour:
   m_nextLevel: {fileID: 1692023083}
   m_totalOfArrivals: 3
   m_haveNextLevel: 1
+  m_ySpeed: 10
+  m_zSpeed: 3
+  m_timeLapse: 3
 --- !u!4 &16168076
 Transform:
   m_ObjectHideFlags: 0
@@ -704,6 +707,9 @@ MonoBehaviour:
   m_nextLevel: {fileID: 1219413855}
   m_totalOfArrivals: 3
   m_haveNextLevel: 1
+  m_ySpeed: 10
+  m_zSpeed: 3
+  m_timeLapse: 3
 --- !u!4 &17755321
 Transform:
   m_ObjectHideFlags: 0
@@ -1374,6 +1380,9 @@ MonoBehaviour:
   m_nextLevel: {fileID: 1622588489}
   m_totalOfArrivals: 3
   m_haveNextLevel: 1
+  m_ySpeed: 10
+  m_zSpeed: 3
+  m_timeLapse: 3
 --- !u!4 &35512175
 Transform:
   m_ObjectHideFlags: 0
@@ -5658,6 +5667,9 @@ MonoBehaviour:
   m_nextLevel: {fileID: 0}
   m_totalOfArrivals: 2
   m_haveNextLevel: 0
+  m_ySpeed: 10
+  m_zSpeed: 3
+  m_timeLapse: 3
 --- !u!1001 &151247938
 Prefab:
   m_ObjectHideFlags: 0
@@ -10868,6 +10880,9 @@ MonoBehaviour:
   m_nextLevel: {fileID: 359036011}
   m_totalOfArrivals: 2
   m_haveNextLevel: 1
+  m_ySpeed: 10
+  m_zSpeed: 3
+  m_timeLapse: 4
 --- !u!1 &307032737
 GameObject:
   m_ObjectHideFlags: 0
@@ -13023,6 +13038,9 @@ MonoBehaviour:
   m_nextLevel: {fileID: 1704576282}
   m_totalOfArrivals: 2
   m_haveNextLevel: 1
+  m_ySpeed: 10
+  m_zSpeed: 3
+  m_timeLapse: 4
 --- !u!1 &359153635
 GameObject:
   m_ObjectHideFlags: 0
@@ -27756,6 +27774,9 @@ MonoBehaviour:
   m_nextLevel: {fileID: 0}
   m_totalOfArrivals: 2
   m_haveNextLevel: 0
+  m_ySpeed: 10
+  m_zSpeed: 3
+  m_timeLapse: 4
 --- !u!4 &754402000
 Transform:
   m_ObjectHideFlags: 0
@@ -31614,6 +31635,9 @@ MonoBehaviour:
   m_nextLevel: {fileID: 1692023083}
   m_totalOfArrivals: 3
   m_haveNextLevel: 1
+  m_ySpeed: 10
+  m_zSpeed: 3
+  m_timeLapse: 3
 --- !u!4 &852322731
 Transform:
   m_ObjectHideFlags: 0
@@ -33773,6 +33797,9 @@ MonoBehaviour:
   m_nextLevel: {fileID: 0}
   m_totalOfArrivals: 2
   m_haveNextLevel: 0
+  m_ySpeed: 10
+  m_zSpeed: 3
+  m_timeLapse: 3
 --- !u!1 &921386483
 GameObject:
   m_ObjectHideFlags: 0
@@ -34767,7 +34794,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &955025622
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37235,34 +37262,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4671620020371526, guid: 8e98f9c879786db48aa71ca8d18a95d2,
     type: 2}
   m_PrefabInternal: {fileID: 40273043}
---- !u!1 &1041874167
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1041874168}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1041874168
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1041874167}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -51.93042, y: -363.66272, z: 951.9973}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1042227487 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4671620020371526, guid: 8e98f9c879786db48aa71ca8d18a95d2,
@@ -37732,6 +37731,9 @@ MonoBehaviour:
   m_nextLevel: {fileID: 16168074}
   m_totalOfArrivals: 3
   m_haveNextLevel: 1
+  m_ySpeed: 10
+  m_zSpeed: 3
+  m_timeLapse: 3
 --- !u!4 &1055060497
 Transform:
   m_ObjectHideFlags: 0
@@ -43516,6 +43518,9 @@ MonoBehaviour:
   m_nextLevel: {fileID: 852322729}
   m_totalOfArrivals: 3
   m_haveNextLevel: 1
+  m_ySpeed: 10
+  m_zSpeed: 3
+  m_timeLapse: 3
 --- !u!4 &1219413857
 Transform:
   m_ObjectHideFlags: 0
@@ -53813,7 +53818,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1500690719}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1045.4, y: -564.8, z: 1802.2563}
+  m_LocalPosition: {x: 1045.4, y: -564.8, z: 1609.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1943587576}
@@ -53834,6 +53839,9 @@ MonoBehaviour:
   m_nextLevel: {fileID: 305506025}
   m_totalOfArrivals: 1
   m_haveNextLevel: 1
+  m_ySpeed: 10
+  m_zSpeed: 3
+  m_timeLapse: 4
 --- !u!1 &1500698814
 GameObject:
   m_ObjectHideFlags: 0
@@ -57861,6 +57869,9 @@ MonoBehaviour:
   m_nextLevel: {fileID: 17755319}
   m_totalOfArrivals: 3
   m_haveNextLevel: 1
+  m_ySpeed: 10
+  m_zSpeed: 3
+  m_timeLapse: 3
 --- !u!4 &1622588491
 Transform:
   m_ObjectHideFlags: 0
@@ -59367,6 +59378,9 @@ MonoBehaviour:
   m_nextLevel: {fileID: 35512173}
   m_totalOfArrivals: 2
   m_haveNextLevel: 1
+  m_ySpeed: 10
+  m_zSpeed: 3
+  m_timeLapse: 3
 --- !u!4 &1668602439
 Transform:
   m_ObjectHideFlags: 0
@@ -60610,6 +60624,9 @@ MonoBehaviour:
   m_nextLevel: {fileID: 2056004048}
   m_totalOfArrivals: 2
   m_haveNextLevel: 1
+  m_ySpeed: 10
+  m_zSpeed: 3
+  m_timeLapse: 3
 --- !u!4 &1692023085
 Transform:
   m_ObjectHideFlags: 0
@@ -60873,6 +60890,9 @@ MonoBehaviour:
   m_nextLevel: {fileID: 754401998}
   m_totalOfArrivals: 3
   m_haveNextLevel: 1
+  m_ySpeed: 10
+  m_zSpeed: 3
+  m_timeLapse: 4
 --- !u!4 &1704576284
 Transform:
   m_ObjectHideFlags: 0
@@ -68895,6 +68915,11 @@ Prefab:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23108315401506260, guid: c2cf495ebb42cb34baff3f57f7848c51,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 176e9bc2fecd2d540baa29c9b91448ff, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2cf495ebb42cb34baff3f57f7848c51, type: 2}
   m_IsPrefabParent: 0
@@ -74070,6 +74095,9 @@ MonoBehaviour:
   m_nextLevel: {fileID: 1668602437}
   m_totalOfArrivals: 2
   m_haveNextLevel: 1
+  m_ySpeed: 10
+  m_zSpeed: 3
+  m_timeLapse: 3
 --- !u!4 &2056004050
 Transform:
   m_ObjectHideFlags: 0
