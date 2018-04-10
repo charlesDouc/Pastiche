@@ -4,4 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/BootUpScene.unity
+    guid: dd2653b2f506646f5bdefc46dbcc3c52
+  - enabled: 1
+    path: Assets/Scenes/Specter.unity
+    guid: 8a0c23f06fa8fa4499e7a0165e616ec4
+  m_configObjects: {}
