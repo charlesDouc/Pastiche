@@ -128,3 +128,6 @@ MonoBehaviour:
   m_allowRight: 1
   m_allowUp: 0
   m_allowDown: 0
+  m_offArrival: {fileID: 2100000, guid: 176e9bc2fecd2d540baa29c9b91448ff, type: 2}
+  m_onArrival: {fileID: 2100000, guid: 67e7fda7b202540ffac9e43036b64706, type: 2}
+  m_offOnStart: 1

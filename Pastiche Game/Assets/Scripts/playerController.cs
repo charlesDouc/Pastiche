@@ -110,6 +110,8 @@ public class playerController : MonoBehaviour {
 			m_canGoLeft = arrivalScript.m_allowLeft;
 			m_canGoUp = arrivalScript.m_allowUp;
 			m_canGoDown = arrivalScript.m_allowDown;
+			// Change state of the arrival
+			arrivalScript.activate(true);
 
 			// Tell the level controller that an arrival was activated
 			levelController lvlManage = m_levelManager.GetComponent<levelController>();
@@ -135,6 +137,9 @@ public class playerController : MonoBehaviour {
 			// Tell the level controller that an arrival was deactivated
 			levelController lvlManage = m_levelManager.GetComponent<levelController>();
 			lvlManage.newEntry (false);
+			// Change the state of the arrival
+			arrivalController arrivalScript = col.gameObject.GetComponent<arrivalController>();
+			arrivalScript.activate(false);
 		}
 	}
 

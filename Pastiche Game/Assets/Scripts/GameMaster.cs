@@ -9,6 +9,10 @@ public class GameMaster : MonoBehaviour {
 	public GameObject m_theConsole;			// Instance of the console to display messages
 	public GameObject m_inputCommands;		// Game Object of the input bar
 	public GameObject m_backCurtain;		// Back curtain to hide scene
+	[Header("Audio System")]
+	public AudioSource m_audio; 			// Audio source
+	public AudioClip m_bipSound;			// Bip Sound
+
 
 	// private variables
 	private ConsoleView m_consoleScript;	// Reference to the script of the console viewer
@@ -41,6 +45,9 @@ public class GameMaster : MonoBehaviour {
 		m_consoleScript.initialSequence(1);
 		
 		yield return new WaitForSeconds(3f);
+		// Play a bip sound
+		m_audio.clip = m_bipSound;
+		m_audio.Play();
 		m_consoleScript.initialSequence(2);
 		
 		yield return new WaitForSeconds(1f);

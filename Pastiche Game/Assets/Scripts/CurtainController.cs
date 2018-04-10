@@ -7,6 +7,7 @@ public class CurtainController : MonoBehaviour {
 	// private variable
 	private bool m_move = false;		// Bool to check if moving
 	private Vector3 m_currentPos;		// Current position of the object
+	private AudioSource m_audio;		// The audio source linked to the object
 
 
 	
@@ -33,6 +34,8 @@ public class CurtainController : MonoBehaviour {
 	// ------------------------------------
 	public void startMovement (bool newMove) {
 		m_move = newMove;
+		m_audio = gameObject.GetComponent<AudioSource>();
+		m_audio.Play();
 	}
 
 }
