@@ -103,9 +103,29 @@ public class ConsoleView : MonoBehaviour {
 
 
 	// MAIN FUNCTIONS FOR TEXT DISPALY ---------------
-	public void bootUp () {
+	public void initialSequence (int messageIndex) {
 		// Show the boot up message on the console
-		console.bootUp ();
+		if (messageIndex == 1) {
+			console.bootUpMessageOne ();
+		}
+		if (messageIndex == 2) {
+			console.bootUpMessageTwo ();
+		}
+		if (messageIndex == 3) {
+			console.bootUpMessageThree ();
+		}
+		if (messageIndex == 4) {
+			console.bootUpMessageFour ();
+		}
+		if (messageIndex == 5) {
+			console.bootUpMessageFive ();
+		}
+		if (messageIndex == 6) {
+			console.bootUpMessageSix ();
+		}
+		if (messageIndex == 7) {
+			console.bootUpMessageSeven ();
+		}
 	}
 
 

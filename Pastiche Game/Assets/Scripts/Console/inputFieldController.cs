@@ -9,6 +9,7 @@ public class inputFieldController : MonoBehaviour {
 
 	// private variables
 	private InputField m_input;
+	private bool m_active = false;
 
 	// ------------------------------------
 	// Use this for initialization
@@ -23,11 +24,19 @@ public class inputFieldController : MonoBehaviour {
 	// ------------------------------------
 	void Update () {
 		// Always keep it activated
-		m_input.ActivateInputField();
+		if (m_active) {
+			m_input.ActivateInputField();
+		} else {
+			m_input.DeactivateInputField();
+		}
 	}
 
 	// ------------------------------------
 	// Methods
 	// ------------------------------------
+	public void changeStatus (bool newStatus) {
+		// change the active status
+		m_active = newStatus;
+	}
 
 }

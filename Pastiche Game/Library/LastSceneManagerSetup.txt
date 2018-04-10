@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/BootUpScene.unity
+- path: Assets/Scenes/Specter.unity
   isLoaded: 1
   isActive: 1

@@ -11,25 +11,4 @@ public class blockerController : MonoBehaviour {
 	public bool m_allowUp;					// Allow the player to go up
 	public bool m_allowDown;				// Allow the player to go down
 
-	// private variables
-
-
-
-	// ------------------------------------
-	// Use this for initialization
-	// ------------------------------------
-	void Start () {
-		
-	}
-	
-	// ------------------------------------
-	// Update is called once per frame
-	// ------------------------------------
-	void Update () {
-		
-	}
-
-	// ------------------------------------
-	// Methods
-	// ------------------------------------
 }

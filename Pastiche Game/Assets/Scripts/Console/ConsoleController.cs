@@ -100,7 +100,7 @@ public class ConsoleController {
 		string[] commandSplit = parseArguments(commandString);
 		string[] args = new string[0];
 		if (commandSplit.Length < 1) {
-			appendLogLine(string.Format("Unable to process command '{0}'", commandString));
+			// appendLogLine(string.Format("Unable to process command '{0}'", commandString));
 			return;
 
 		}  else if (commandSplit.Length >= 2) {
@@ -118,7 +118,7 @@ public class ConsoleController {
 			appendLogLine(string.Format("Unknown command '{0}', type 'help' for list.", command));
 		}  else {
 			if (reg.handler == null) {
-				appendLogLine(string.Format("Unable to process command '{0}', handler was null.", command));
+				// appendLogLine(string.Format("Unable to process command '{0}', handler was null.", command));
 			}  else {
 				reg.handler(args);
 			}
@@ -150,16 +150,54 @@ public class ConsoleController {
 	// ----------------------------------------------------------------------
 	// AUTOMATIC MESSAGES
 	// ----------------------------------------------------------------------
-	public void bootUp () {
+	public void bootUpMessageOne () {
 		appendLogLine ("Hello administrator.");
-		appendLogLine ("This software is handle by [instert] and supoort by [insert].");
-		appendLogLine ("This system is handle by [instert] and supoort by [insert].");
+		appendLogLine ("Connecting to SPECTER.CO servers...");
+		appendLogLine ("Stand by.");
 		appendLogLine (" ");
-		appendLogLine ("This game plays with command lines.");
-		appendLogLine ("Enter 'help' to see a list of all actions you can do.");
-
 	}
 
+	public void bootUpMessageTwo () {
+		appendLogLine ("Connection Error 87.");
+		appendLogLine ("Unable to connect. Wrong identifications.");
+		appendLogLine (" ");
+	}
+
+	public void bootUpMessageThree () {
+		appendLogLine ("Start FORCE access sequence.");
+		appendLogLine ("Stand by.");
+		appendLogLine (" ");
+	}
+
+	public void bootUpMessageFour () {
+		appendLogLine ("!@#(*$&#(#)$*$&@*#($*$&#(@)");
+		appendLogLine ("($*$&@#**#*@*#&$#&$&#??#&$@*#(@(#(@$&&$&$&##*@*#@($&%)))))");
+		appendLogLine ("($*#@*$#@*$#@*$#@($(#@$(#@(%#*@%*#@@#%(@#$)#@$)#@($#@$*#@");
+		appendLogLine ("($*#@*$#@*$#@*$#@($(#@#$)#@$)#@($#@$*#@");
+		appendLogLine (" ");
+	}
+
+	public void bootUpMessageFive () {
+		appendLogLine ("Granting Access ID: 84204942");
+		appendLogLine ("Code name : Depth");
+		appendLogLine ("");
+		appendLogLine ("Initialising DEPTH sequence.");
+		appendLogLine ("Stand by.");
+	}
+
+	public void bootUpMessageSix () {
+		appendLogLine (" ");
+		appendLogLine ("Loading visual representation.");
+		appendLogLine ("Stand by.");
+	}
+
+		public void bootUpMessageSeven () {
+		appendLogLine (" ");
+		appendLogLine ("Activating command input.");
+		appendLogLine ("Press help to display all commands available.");
+		appendLogLine ("Initial sequence started.");
+		appendLogLine ("System's all yours user_84204942.");
+	}
 
 
 	// ----------------------------------------------------------------------
