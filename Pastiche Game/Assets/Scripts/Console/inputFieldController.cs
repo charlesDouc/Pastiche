@@ -9,7 +9,7 @@ public class inputFieldController : MonoBehaviour {
 
 	// private variables
 	private InputField m_input;
-	private bool m_active = true;
+	private bool m_active = false;
 
 	// ------------------------------------
 	// Use this for initialization

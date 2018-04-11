@@ -31,6 +31,9 @@ public class GameMaster : MonoBehaviour {
 
 		// Initial messages
 		StartCoroutine("initialSequence");
+
+		//Set Cursor to not be visible
+        Cursor.visible = false;
 	}
 
 	// ------------------------------------
@@ -119,5 +122,10 @@ public class GameMaster : MonoBehaviour {
 		m_audioTwo.Play();
 
 		m_consoleScript.final(numberOfMove);
+	}
+
+	public void playBip () {
+		m_audioTwo.clip = m_bipSound;
+		m_audioTwo.Play();
 	}
 }

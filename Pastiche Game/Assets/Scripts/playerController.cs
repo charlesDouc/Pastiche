@@ -107,6 +107,9 @@ public class playerController : MonoBehaviour {
 			// Play a sound on impact
 			m_audio.clip = m_blockerImpactSound;
 			m_audio.Play();
+
+			// Add entry to the blocker
+			blockerScript.addPlayer(true);
 		}
 
 		// When the object collides with the Arrival
@@ -140,13 +143,9 @@ public class playerController : MonoBehaviour {
 			// Play a sound on impact
 			m_audio.clip = m_arrivalEnterSound;
 			m_audio.Play();
-		}
 
-		// If it collides with anpther player
-		if (col.tag == "Player") {
-			// Reset the level
-			levelController lvlManage = m_levelManager.GetComponent<levelController>();
-			lvlManage.resetLevel ();
+			// Add entry to the blocker
+			arrivalScript.addPlayer(true);
 		}
 	} 
 
@@ -163,6 +162,16 @@ public class playerController : MonoBehaviour {
 
 			// Reset the material to defaut
 			GetComponent<Renderer>().material = m_normalMat;
+
+			// Add entry to the blocker
+			arrivalScript.addPlayer(false);
+		}
+
+		if (col.tag == "Blocker") {
+			// Get the directions value from the blocker
+			blockerController blockerScript = col.gameObject.GetComponent<blockerController>();
+			// Delete an entry
+			blockerScript.addPlayer(false);
 		}
 	}
 

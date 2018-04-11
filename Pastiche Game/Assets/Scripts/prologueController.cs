@@ -35,6 +35,9 @@ public class prologueController : MonoBehaviour {
 		// Start the boot Sequence
 		StartCoroutine("BootUpSequence");
 
+		//Set Cursor to not be visible
+        Cursor.visible = false;
+
 	}
 		
 	// ------------------------------------
