@@ -136,8 +136,23 @@ public class ConsoleView : MonoBehaviour {
 		if (messageIndex == 2) {
 			console.stageReady ();
 		}
+	}
 
+	public void newEnvironment (int messageIndex) {
+		// Show a message in the console view
+		if (messageIndex == 1) {
+			console.newEnvOne ();
+		}
+		if (messageIndex == 2) {
+			console.newEnvTwo ();
+		}
+		if (messageIndex == 3) {
+			console.newEnvThree ();
+		}
+	}
 
+	public void final (int indexScore) {
+		console.theEnd (indexScore);
 	}
 
 

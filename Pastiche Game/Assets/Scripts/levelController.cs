@@ -5,21 +5,24 @@ using UnityEngine;
 public class levelController : MonoBehaviour {
 
 	// public variables
-	public GameObject m_nextLevel;			// Variable to hold next level game object
-	public int m_totalOfArrivals;			// Total of arrivals in this level
-	public bool m_haveNextLevel = true;		// True if there's a next level (put to false while building)
+	public GameObject m_nextLevel;				// Variable to hold next level game object
+	public int m_totalOfArrivals;				// Total of arrivals in this level
+	public bool m_haveNextLevel = true;			// True if there's a next level (put to false while building)
+	public bool m_changingEnvironment = false; 	// If the level changing will bring a new environment
+	public GameObject m_newEnvironment;			// New Environment to add
+	public int EnvironmentIndex;				// What env?
 	[Header("End direction Speed")]
-	public float m_ySpeed = 10f;			// End animation y spedd direction
-	public float m_zSpeed = 3f;				// End animation y spedd direction
-	public float m_timeLapse = 3f;			// Time before activating next stage;	
+	public float m_ySpeed = 10f;				// End animation y spedd direction
+	public float m_zSpeed = 3f;					// End animation y spedd direction
+	public float m_timeLapse = 3f;				// Time before activating next stage;	
 
 	// private variables
-	private int m_activatedArrivals = 0;	// Total of activated arrivals in this level
-	private GameObject m_theGameMaster;		// Instance of the Game Master
-	private GameMaster m_GMcontroller;		// Script attach to the game master
-	private bool levelFinished = false;		// Indicate the state of the stage
-	private Vector3 m_currentPos; 			// Current pos of the object
-	private bool m_startEndAnim = false;	// Check for the end animation 
+	private int m_activatedArrivals = 0;		// Total of activated arrivals in this level
+	private GameObject m_theGameMaster;			// Instance of the Game Master
+	private GameMaster m_GMcontroller;			// Script attach to the game master
+	private bool levelFinished = false;			// Indicate the state of the stage
+	private Vector3 m_currentPos; 				// Current pos of the object
+	private bool m_startEndAnim = false;		// Check for the end animation 
 
 	// ------------------------------------
 	// Use this for initialization
@@ -35,7 +38,7 @@ public class levelController : MonoBehaviour {
 	// ------------------------------------
 	void Update () {
 		// When the number of activated arrivals equal the total of arrivals in the level
-		if (m_activatedArrivals == m_totalOfArrivals && m_haveNextLevel	&& !levelFinished) {
+		if (m_activatedArrivals >= m_totalOfArrivals && m_haveNextLevel	&& !levelFinished) {
 			// Activate next level and desactivate the current one
 			StartCoroutine("startTransition");
 			levelFinished = true;
@@ -82,6 +85,11 @@ public class levelController : MonoBehaviour {
 		m_startEndAnim = true;
 		yield return new WaitForSeconds(m_timeLapse);
 		// Turn off this level and activate next level
+		if (m_changingEnvironment) {
+			m_newEnvironment.SetActive(true);
+			m_GMcontroller.newEnvironment(EnvironmentIndex);
+			yield return new WaitForSeconds (3f);
+		}
 		m_nextLevel.SetActive(true);
 		// Tell the GM the transition is over
 		m_GMcontroller.endTransition();

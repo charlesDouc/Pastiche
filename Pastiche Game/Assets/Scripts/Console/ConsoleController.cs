@@ -213,6 +213,50 @@ public class ConsoleController {
 		appendLogLine ("Ready to solve.");
 	}
 
+	public void newEnvOne () {
+		appendLogLine (" ");
+		appendLogLine ("Approching the core.");
+		appendLogLine ("Walking on the grid.");
+		appendLogLine ("Infinite possibilities.");
+	}
+
+	public void newEnvTwo () {
+		appendLogLine (" ");
+		appendLogLine ("Approching the core.");
+		appendLogLine ("Sky is a grid.");
+		appendLogLine ("Entering the tunnel...");
+	}
+
+	public void newEnvThree () {
+		appendLogLine (" ");
+		appendLogLine ("Approching the core.");
+		appendLogLine ("New horizons.");
+		appendLogLine ("Break the barriers...");
+	}
+
+	public void theEnd (int numberofMove) {
+		appendLogLine (" ");
+		appendLogLine (" ");
+		appendLogLine (" ");
+		appendLogLine (" ");
+		appendLogLine (" ");
+		appendLogLine (" ");
+		appendLogLine (" ");
+		appendLogLine (" ");
+		appendLogLine (" ");
+		appendLogLine (" ");
+		appendLogLine (" ");
+		appendLogLine (" ");
+		appendLogLine (" ");
+		appendLogLine (" ");
+		appendLogLine ("Specter.");
+		appendLogLine ("You beat the game in " + numberofMove + " moves.");
+		appendLogLine (" ");
+		appendLogLine ("A game by Charles Doucet.");
+		appendLogLine ("Made in Unity");
+		appendLogLine ("www.charlesdoucet.com");
+	}
+
 
 	// ----------------------------------------------------------------------
 	// MY COMMANDS

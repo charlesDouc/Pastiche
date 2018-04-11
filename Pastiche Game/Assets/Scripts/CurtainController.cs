@@ -18,7 +18,7 @@ public class CurtainController : MonoBehaviour {
 		m_currentPos = transform.position;
 		// Move animation
 		if (m_move) {
-			m_currentPos.y -= 3f;
+			m_currentPos.y -= 6f;
 		}
 		// Destroy the object onece reach a certain point
 		if (m_currentPos.y < -1500f) {

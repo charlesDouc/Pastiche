@@ -59,7 +59,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 176e9bc2fecd2d540baa29c9b91448ff, type: 2}
+  - {fileID: 2100000, guid: 924b31c665265924192722ae6c411ba3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -128,3 +128,6 @@ MonoBehaviour:
   m_allowRight: 1
   m_allowUp: 0
   m_allowDown: 0
+  m_offArrival: {fileID: 2100000, guid: 924b31c665265924192722ae6c411ba3, type: 2}
+  m_onArrival: {fileID: 2100000, guid: ae92aabb874f0254b90a61a6ccdd0b02, type: 2}
+  m_offOnStart: 1

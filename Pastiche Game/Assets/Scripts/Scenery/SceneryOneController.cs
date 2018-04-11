@@ -5,11 +5,9 @@ using UnityEngine;
 public class SceneryOneController : MonoBehaviour {
 
 	// public variables
-	public GameObject m_verticals;			// All instance of Verticals
 	public GameObject m_horizontalPrefab;	// Prefab to be spawn
+	public GameObject m_backHorizontal;		// Game object for the back horizontal ()
 
-	// private variables
-	private bool VerticalAnimation = true;	// Check for vertical animation
 
 	// ------------------------------------
 	// Use this for initialization

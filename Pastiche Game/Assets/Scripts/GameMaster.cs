@@ -19,6 +19,7 @@ public class GameMaster : MonoBehaviour {
 
 	// private variables
 	private ConsoleView m_consoleScript;	// Reference to the script of the console viewer
+	private int numberOfMove = 0;			// Player Score
 
 
 	// ------------------------------------
@@ -36,6 +37,15 @@ public class GameMaster : MonoBehaviour {
 	// Update is called once per frame
 	// ------------------------------------
 	void Update () {
+		// EachTime player hit start
+		if (Input.GetKeyDown(KeyCode.Return)) {
+			// Update player's score
+			numberOfMove ++;
+		}
+		// Escape command
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			Application.Quit();
+		}
 		
 	}
 
@@ -94,5 +104,20 @@ public class GameMaster : MonoBehaviour {
 		m_consoleScript.successSequence(2);
 		m_audioTwo.clip = m_bipSound;
 		m_audioTwo.Play();
+	}
+
+	public void newEnvironment (int index) {
+		 // Show a message
+		m_consoleScript.newEnvironment(index);
+	}
+
+	public void theEnd () {
+		// Disable input command
+		inputFieldController inputScript = m_inputCommands.GetComponent<inputFieldController>();
+		inputScript.changeStatus(false);
+		m_audioTwo.clip = m_bipSound;
+		m_audioTwo.Play();
+
+		m_consoleScript.final(numberOfMove);
 	}
 }
