@@ -11,7 +11,10 @@ public class GameMaster : MonoBehaviour {
 	public GameObject m_backCurtain;		// Back curtain to hide scene
 	[Header("Audio System")]
 	public AudioSource m_audio; 			// Audio source
+	public AudioSource m_audioTwo; 			// Second Audio source
 	public AudioClip m_bipSound;			// Bip Sound
+	public AudioClip m_transitionSound;		// Transition sound
+
 
 
 	// private variables
@@ -78,6 +81,9 @@ public class GameMaster : MonoBehaviour {
 		inputScript.changeStatus(false);
 		// Show a message in the console
 		m_consoleScript.successSequence(1);
+		// Play transition sound
+		m_audio.clip = m_transitionSound;
+		m_audio.Play();
 	}
 
 	public void endTransition () {
@@ -86,5 +92,7 @@ public class GameMaster : MonoBehaviour {
 		inputScript.changeStatus(true);
 		// Show a message in the console
 		m_consoleScript.successSequence(2);
+		m_audioTwo.clip = m_bipSound;
+		m_audioTwo.Play();
 	}
 }

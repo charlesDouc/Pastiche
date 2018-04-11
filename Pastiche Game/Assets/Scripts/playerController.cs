@@ -8,9 +8,13 @@ public class playerController : MonoBehaviour {
 	public float m_movementSpeed = 25f;		// Movement speed of the object
 	public GameObject m_levelManager;		// The level manager in which the object lives
 	public bool m_isInverse = false;		// Determine if the player is inverse form commands
-	[Header("MaterialsSetiing")]
+	[Header("Material Settings")]
 	public Material m_normalMat;			// Defaut material (not in arriva)
 	public Material m_activeMat;			// Arrival active material
+	[Header("Audio Settings")]
+	public AudioSource	m_audio;			// The audio source of the object
+	public AudioClip m_arrivalEnterSound;	// Sound when colliding with an arrival
+	public AudioClip m_blockerImpactSound;	// Sound when the player collides with a blocker
 
 	// private variables
 	private bool m_move = false;			// Check if object is in movement
@@ -99,6 +103,10 @@ public class playerController : MonoBehaviour {
 			// Update the position in the center of the collision object
 			m_currentPos = col.transform.position;
 			transform.position = m_currentPos;
+
+			// Play a sound on impact
+			m_audio.clip = m_blockerImpactSound;
+			m_audio.Play();
 		}
 
 		// When the object collides with the Arrival
@@ -129,6 +137,9 @@ public class playerController : MonoBehaviour {
 
 			// Change the active material
 			GetComponent<Renderer>().material = m_activeMat;
+			// Play a sound on impact
+			m_audio.clip = m_arrivalEnterSound;
+			m_audio.Play();
 		}
 
 		// If it collides with anpther player

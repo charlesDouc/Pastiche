@@ -10,6 +10,8 @@ TagManager:
   - Blocker
   - Arrival
   - Console
+  - SceneryDestroy
+  - SceneryVertical
   layers:
   - Default
   - TransparentFX
